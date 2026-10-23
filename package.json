@@ -10,17 +10,20 @@
     "test": "vitest run"
   },
   "license": "MIT",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/PetrefiedThunder/mcp-nhtsa"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^25.3.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.0"
+    "vitest": "~4.1.12"
   }
 }

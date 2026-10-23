@@ -1,0 +1,45 @@
+{
+  "_recording": {
+    "source": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Land%20Rover&format=json&model=Range%20Rover&modelYear=2024",
+    "fetchedAt": "2026-10-23T04:36:31Z",
+    "note": "Real NHTSA response trimmed to the first 2 whole records of results; no values edited. Original Count was 9."
+  },
+  "response": {
+    "Count": 9,
+    "Message": "Results returned successfully",
+    "results": [
+      {
+        "Manufacturer": "Jaguar Land Rover North America, LLC",
+        "NHTSACampaignNumber": "23V790000",
+        "parkIt": false,
+        "parkOutSide": false,
+        "overTheAirUpdate": false,
+        "ReportReceivedDate": "22/11/2023",
+        "Component": "ENGINE AND ENGINE COOLING",
+        "Summary": "Jaguar Land Rover North America, LLC (Land Rover) is recalling certain 2024 Land Rover Range Rover vehicles.  The engine mounted oil cooler hoses may not be secured properly, which can result in oil leaking onto the road.",
+        "Consequence": "Oil leaking onto the road can cause a hazard for other road users, increasing the risk of a crash.",
+        "Remedy": "Dealers will inspect and replace the fasteners and the oil cooler hoses, as necessary, free of charge.  Owner letters were mailed January 18, 2024.  Owners may contact Land Rover customer service at 1-800-637-6837.  Land Rover's number for this recall is N845.",
+        "Notes": "Owners may also contact the National Highway Traffic Safety Administration Vehicle Safety Hotline at 1-888-327-4236 (TTY 1-800-424-9153), or go to www.nhtsa.gov.",
+        "ModelYear": "2024",
+        "Make": "LAND ROVER",
+        "Model": "RANGE ROVER"
+      },
+      {
+        "Manufacturer": "Jaguar Land Rover North America, LLC",
+        "NHTSACampaignNumber": "23V872000",
+        "parkIt": false,
+        "parkOutSide": false,
+        "overTheAirUpdate": false,
+        "ReportReceivedDate": "21/12/2023",
+        "Component": "STRUCTURE:BODY",
+        "Summary": "Jaguar Land Rover North America, LLC (Land Rover) is recalling certain 2024 Land Rover Range Rover and Land Rover Range Rover Sport vehicles.  The body panels may not be bonded properly, reducing the structural strength of the vehicle.",
+        "Consequence": "Reduced structural strength may not adequately protect passengers, increasing the risk of injury.  Additionally, the fuel system may be damaged during a crash, causing a fuel leak and increasing the risk of a fire.",
+        "Remedy": "Dealers will install two rivets and apply sealant, free of charge.  Owner notification letters were mailed February 8, 2024.  Owners may contact Land Rover customer service at 1-800-637-6837.  Land Rover's number for this recall is N837.",
+        "Notes": "Owners may also contact the National Highway Traffic Safety Administration Vehicle Safety Hotline at 1-888-327-4236 (TTY 1-800-424-9153), or go to www.nhtsa.gov.",
+        "ModelYear": "2024",
+        "Make": "LAND ROVER",
+        "Model": "RANGE ROVER"
+      }
+    ]
+  }
+}
