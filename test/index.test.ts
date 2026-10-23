@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 type ToolHandler = (args: Record<string, unknown>) => Promise<{ content: { text: string }[] }>;
@@ -27,9 +28,10 @@ describe("NHTSA MCP tools", () => {
   });
 
   it("encodes recall search parameters and returns results", async () => {
+    const fixture = JSON.parse(readFileSync(new URL("./fixtures/recallsByVehicle-land-rover-range-rover-2024.json", import.meta.url), "utf8"));
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
-      json: async () => ({ results: [{ campaignNumber: "123" }] }),
+      json: async () => fixture.response,
     });
     vi.stubGlobal("fetch", fetchMock);
 
@@ -38,7 +40,12 @@ describe("NHTSA MCP tools", () => {
     expect(fetchMock).toHaveBeenCalledWith(
       "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Land%20Rover&format=json&model=Range%20Rover&modelYear=2024",
     );
-    expect(JSON.parse(result.content[0].text)).toEqual([{ campaignNumber: "123" }]);
+    const recalls = JSON.parse(result.content[0].text);
+    expect(recalls).toEqual(fixture.response.results);
+    expect(recalls[0]).toHaveProperty("NHTSACampaignNumber", fixture.response.results[0].NHTSACampaignNumber);
+    expect(recalls[0]).toHaveProperty("Make", "LAND ROVER");
+    expect(recalls[0]).toHaveProperty("Component", fixture.response.results[0].Component);
+    expect(recalls[0]).toHaveProperty("Summary", fixture.response.results[0].Summary);
   });
 
   it("rejects a recall search without make or campaign number", async () => {
